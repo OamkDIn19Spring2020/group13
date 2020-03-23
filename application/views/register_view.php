@@ -12,6 +12,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- css files -->
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 <link rel="stylesheet" href="../css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="../css/all.css"> <!-- Font-Awesome-Icons-CSS -->
 <!-- //css files -->
 <!-- online-fonts -->
 <link href="//fonts.googlea
@@ -33,18 +34,50 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 				<h2>Register a new member</h2>
 			</div>
 			<form action="register" method="post">
+				<div>
+					<input type="radio" name="type" value=1 class="rdBtn"> Staff<br>
+  					<input type="radio" name="type" value=0 class="rdBtn"> Adminstator<br>
+				</div>&nbsp;
 				<div class="pom-agile">
 					<input placeholder="E-mail" name="username" class="user" type="email" required="">
 					<span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
 				</div>
 				<div class="pom-agile">
-					<input  placeholder="Password" name="Password" class="pass" type="password" required="">
+					<input placeholder="Password" name="Password" class="pass" type="password" required="">
 					<span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
 				</div>
 				<div class="pom-agile">
-					<input  placeholder="Re-password" name="RePassword" class="pass" type="password" required="">
+					<input placeholder="Re-password" name="RePassword" class="pass" type="password" required="">
 					<span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
 				</div>
+				<div class="pom-agile">
+					<input placeholder="First name" name="fn" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-user-tie"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Last name" name="ln" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-user-tie"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Phone number" name="phone" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-phone"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Email" name="email" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-envelope"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Department" name="department" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-home"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Salary" name="salary" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-dollar-sign"></i></span>
+				</div>&nbsp;
+				<!-- <div class="pom-agile">
+					<input type="text" name="hDay" required pattern="\d{4}-\d{2}-\d{2}" placeholder="Start Day" title="Enter a date in this format YYYY-MM-DD">
+					<span class="icon1"><i class="far fa-calendar-alt"></i></span>
+				</div> -->
 				<div class="sub-w3l">
 					<div class="right-w3l">
 						<input type="submit" value="Register">

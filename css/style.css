@@ -43,6 +43,9 @@ body {
 .header-w3l {
     padding-top: 2em;
 }
+.rdBtn{
+	font-color: red;
+}
 .header-w3l h1 {
     font-size: 3em;
     color: white;
@@ -62,7 +65,7 @@ body {
     margin-bottom: 1.5em;
     text-transform: uppercase;
 }
-.sub-main-w3 input[type="email"], .sub-main-w3 input[type="password"] {
+.sub-main-w3 input[type="email"], .sub-main-w3 input[type="password"], .sub-main-w3 input[type="text"] {
     outline: none;
     font-size: .9em;
     padding: 1em 3em 1em 1em;

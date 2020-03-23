@@ -9,7 +9,7 @@ class Login_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function addMember($username, $pwd, $rePwd) 
+	public function addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary) 
 	{
 		// check that already exist the username?
 		$this->db->where('username', $username);
@@ -21,7 +21,17 @@ class Login_model extends CI_Model {
 		else if ($countUser == '0')
 		{
 			$message = "<span style='color: red;'> Register success !! </span>";
-			$object = array('username' => $username, 'password' => $pwd);
+			$object = array('username' => $username
+							,'password' => $pwd
+							,'type' => $type
+							,'firstname' => $fn
+							,'lastname' => $ln
+							,'telephone' => $phone
+							,'email' => $email
+							,'department' => $department
+							,'salary' => $salary
+							
+						);
 			$this->db->insert('register_tr2k', $object);
 			redirect('./index','refresh');
 			echo "<script type='text/javascript'>alert('$message');</script>"; 

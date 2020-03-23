@@ -10,7 +10,11 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login_view');
+		if($this->session->userdata('userSession')) {
+			$this->load->view('dashboard');
+		} else {
+			$this->load->view('login_view');
+		}
 	}
 
 	public function register()
@@ -20,10 +24,20 @@ class Login extends CI_Controller {
 		$username = $this->input->post('username');
 		$pwd = $this->input->post('Password');
 		$rePwd = $this->input->post('RePassword');
+		$type = $this->input->post('type');
+		$fn = $this->input->post('fn');
+		$ln = $this->input->post('ln');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$department = $this->input->post('department');
+		$salary = $this->input->post('salary');
+		$hiring_date = $this->input->post('hDay');
+
 		
-		if ($username && $pwd && $rePwd) {
+		if ($username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary )
+		{
 			$this->load->model('login_model');
-			$this->login_model->addMember($username, $pwd, $rePwd);
+			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
 		}
 	}
 
