@@ -35,7 +35,7 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 			</div>
 			<form action="register" method="post">
 				<div>
-					<input type="radio" name="type" value=1 class="rdBtn"> Staff<br>
+					<input type="radio" name="type" value=1 class="rdBtn" checked> Staff<br>
   					<input type="radio" name="type" value=0 class="rdBtn"> Adminstator<br>
 				</div>&nbsp;
 				<div class="pom-agile">
