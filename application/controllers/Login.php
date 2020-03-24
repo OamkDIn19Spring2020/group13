@@ -51,18 +51,18 @@ class Login extends CI_Controller {
 
 		//send data to model
 		$this->load->model('login_model');
-		$dem = $this->login_model->getUser($Username, $pwd);
+		$count = $this->login_model->getUser($Username, $pwd);
 		$type = $this->login_model->getType($Username);
 
 		
-		if($dem == '1' && $type['type'] == '0') {
+		if($count == '1' && $type['type'] == '0') {
 			//create session
 			$this->session->set_userdata('userSession', $Username);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/dashboard','refresh');	
 		}
-		else if($dem == '1' && $type['type'] == '1') {
+		else if($count == '1' && $type['type'] == '1') {
 			//create session
 			$this->session->set_userdata('userSession', $Username);
 			$message = 'Welcome back '.$Username;
