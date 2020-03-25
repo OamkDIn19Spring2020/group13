@@ -9,7 +9,7 @@ class Login_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary) 
+	public function addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary, $hiring_date) 
 	{
 		// check that already exist the username?
 		$this->db->where('username', $username);
@@ -30,6 +30,7 @@ class Login_model extends CI_Model {
 							,'email' => $email
 							,'department' => $department
 							,'salary' => $salary
+							,'hiring_date' => $hiring_date
 							
 						);
 			$this->db->insert('register_tr2k', $object);
@@ -48,6 +49,14 @@ class Login_model extends CI_Model {
 		$this->db->where('password', $pwd);
 		$count = $this->db->get('register_tr2k')->num_rows();
 		return $count;
+	}
+
+	public function getType($Username)
+	{
+		$this->db->select('type');
+		$this->db->where('username', $Username);
+		 $query=$this->db->get('register_tr2k')->row_array();
+		return $query;
 	}
 }
 

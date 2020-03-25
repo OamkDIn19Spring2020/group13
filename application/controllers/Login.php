@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 		$hiring_date = $this->input->post('hDay');
 
 		
-		if ($username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary )
+		if ($username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary && $hiring_date )
 		{
 			$this->load->model('login_model');
 			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
@@ -51,14 +51,23 @@ class Login extends CI_Controller {
 
 		//send data to model
 		$this->load->model('login_model');
-		$dem = $this->login_model->getUser($Username, $pwd);
+		$count = $this->login_model->getUser($Username, $pwd);
+		$type = $this->login_model->getType($Username);
 
-		if($dem == '1') {
+		
+		if($count == '1' && $type['type'] == '0') {
 			//create session
 			$this->session->set_userdata('userSession', $Username);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
-			redirect('/dashboard','refresh');
+			redirect('/dashboard','refresh');	
+		}
+		else if($count == '1' && $type['type'] == '1') {
+			//create session
+			$this->session->set_userdata('userSession', $Username);
+			$message = 'Welcome back '.$Username;
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			redirect('/staff','refresh');	
 		}
 		else {
 			$message = "wrong user";
@@ -80,6 +89,10 @@ class Login extends CI_Controller {
 			$this->session->unset_userdata('userSession');
 			redirect('/index','refresh');
 		}
+	}
+
+	public function staff(){
+		$this->load->view('staff_view');
 	}
 }
 

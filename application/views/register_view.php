@@ -74,10 +74,10 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 					<input placeholder="Salary" name="salary" class="pass" type="text" required="">
 					<span class="icon2"><i class="fas fa-dollar-sign"></i></span>
 				</div>&nbsp;
-				<!-- <div class="pom-agile">
+				<div class="pom-agile">
 					<input type="text" name="hDay" required pattern="\d{4}-\d{2}-\d{2}" placeholder="Start Day" title="Enter a date in this format YYYY-MM-DD">
 					<span class="icon1"><i class="far fa-calendar-alt"></i></span>
-				</div> -->
+				</div>
 				<div class="sub-w3l">
 					<div class="right-w3l">
 						<input type="submit" value="Register">
