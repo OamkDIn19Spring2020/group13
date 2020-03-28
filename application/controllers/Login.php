@@ -10,9 +10,14 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		if($this->session->userdata('userSession')) {
-			$this->load->view('dashboard');
-		} else {
+		if($this->session->userdata('type') == '0') {
+			$this->load->view('dashboard');	
+		} 
+		else if ($this->session->userdata('type') == '1')
+		{
+			$this->load->view('staff_view');
+		}
+		else if (!$this->session->userdata('userSession')) {
 			$this->load->view('login_view');
 		}
 	}
@@ -39,6 +44,10 @@ class Login extends CI_Controller {
 			$this->load->model('login_model');
 			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
 		}
+		else
+		{	
+				echo "<span style='color: red;'> Wrong input !! </span>";
+		}
 	}
 
 	public function dangNhap() 
@@ -57,14 +66,18 @@ class Login extends CI_Controller {
 		
 		if($count == '1' && $type['type'] == '0') {
 			//create session
+			$type = $type['type'];
 			$this->session->set_userdata('userSession', $Username);
+			$this->session->set_userdata('type', $type);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/dashboard','refresh');	
 		}
 		else if($count == '1' && $type['type'] == '1') {
 			//create session
+			$type = $type['type'];
 			$this->session->set_userdata('userSession', $Username);
+			$this->session->set_userdata('type', $type);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/staff','refresh');	
@@ -77,7 +90,7 @@ class Login extends CI_Controller {
 
 	public function dashboard()
 	{
-		if($this->session->userdata('userSession')) {
+		if($this->session->userdata('type') == '0'){  ///not loading _SESSION['TYPE'] yet
 			$this->load->view('dashboard');
 		} else {
 			redirect('/index','refresh');
@@ -87,12 +100,18 @@ class Login extends CI_Controller {
 	public function logout(){
 		if($this->session->userdata('userSession')) {
 			$this->session->unset_userdata('userSession');
+			$this->session->unset_userdata('type');
 			redirect('/index','refresh');
 		}
 	}
 
 	public function staff(){
-		$this->load->view('staff_view');
+		if($this->session->userdata('type') == '1') {
+			$this->load->view('staff_view');
+		} else
+		{
+			redirect('/index','refresh');
+		}
 	}
 }
 
