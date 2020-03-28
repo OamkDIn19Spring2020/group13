@@ -10,6 +10,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		//check the _session[type] to load the view
 		if($this->session->userdata('type') == '0') {
 			$this->load->view('dashboard');	
 		} 
@@ -25,7 +26,7 @@ class Login extends CI_Controller {
 	public function register()
 	{
 		$this->load->view('register_view');
-
+		// get variable from the input
 		$username = $this->input->post('username');
 		$pwd = $this->input->post('Password');
 		$rePwd = $this->input->post('RePassword');
@@ -38,10 +39,13 @@ class Login extends CI_Controller {
 		$salary = $this->input->post('salary');
 		$hiring_date = $this->input->post('hDay');
 
-		
+		//check the input data is not null (i already validate from form, btw i tried to invade the hackers and attackers to edit HTML via SYNTAX SQL) 
 		if ($username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary && $hiring_date )
 		{
+			//load model
 			$this->load->model('login_model');
+
+			//send data to model
 			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
 		}
 		else
@@ -63,9 +67,10 @@ class Login extends CI_Controller {
 		$count = $this->login_model->getUser($Username, $pwd);
 		$type = $this->login_model->getType($Username);
 
-		
+		//admin
 		if($count == '1' && $type['type'] == '0') {
 			//create session
+			//set variable
 			$type = $type['type'];
 			$this->session->set_userdata('userSession', $Username);
 			$this->session->set_userdata('type', $type);
@@ -73,6 +78,7 @@ class Login extends CI_Controller {
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/dashboard','refresh');	
 		}
+		//staff
 		else if($count == '1' && $type['type'] == '1') {
 			//create session
 			$type = $type['type'];
@@ -90,9 +96,11 @@ class Login extends CI_Controller {
 
 	public function dashboard()
 	{
-		if($this->session->userdata('type') == '0'){  ///not loading _SESSION['TYPE'] yet
+		//admin
+		if($this->session->userdata('type') == '0'){ 
 			$this->load->view('dashboard');
 		} else {
+			// tried to catch exception if sb enter the diff link 
 			redirect('/index','refresh');
 		}
 	}
@@ -110,6 +118,7 @@ class Login extends CI_Controller {
 			$this->load->view('staff_view');
 		} else
 		{
+			// tried to catch exception if sb enter the diff link 
 			redirect('/index','refresh');
 		}
 	}
