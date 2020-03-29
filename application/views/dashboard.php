@@ -1,125 +1,117 @@
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Responsive vertical menu navigation</title>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="../css/style2.css">
 
-            <nav class="navbar navbar-default navbar-static-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            Hello <?= $this->session->userdata('userSessionName'); ?>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="../js/main.js"></script>
+
+        <style>
+            .ad {
+                position: absolute;
+                width: 300px;
+                height: 250px;
+                border: 1px solid #ddd;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 250px;
+                z-index: 10;
+            }
+            .ad .close {
+                position: absolute;
+                font-family: 'ionicons';
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                background-color: #999;
+                font-size: 20px;
+                left: -20px;
+                top: -1px;
+                display: table-cell;
+                vertical-align: middle;
+                cursor: pointer;
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function() {
+                $('.close').click(function() {
+                    $('.ad').css('display', 'none');
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <!-- navbar -->
+        <div class="header">
+            <div class="logo">
+                <i class="fa fa-tachometer"></i>
+                <span>Group 13</span>
+            </div>
+            <a href="#" class="nav-trigger"><span></span></a>
+        </div>
+        <div class="side-nav">
+            <div class="logo">
+                <i class="fa fa-tachometer"></i>
+                <span>Group 13</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span><i class="fa fa-user"></i></span>
+                            <span>Users</span>
                         </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">            
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="logout" target="_blank">Log-out</a></li>
-                            <li class="dropdown ">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Settings
-                                    <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li class="dropdown-header">SETTINGS</li>
-                                        <li class=""><a href="#">Link</a></li>
-                                        <li class=""><a href="#">Other Link</a></li>
-                                        <li class=""><a href="#">Other Link</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="logout">Logout</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div class="container-fluid">
-                    <div class="col col-md-3">          
-                        <div class="panel-group" id="accordion">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                Files</a>
-                              </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
-                                <ul class="list-group">
-                                    <li class="list-group-item"><span class="badge">253</span> New</li>
-                                    <li class="list-group-item"><span class="badge">17</span> Deleted</li>
-                                    <li class="list-group-item"><span class="badge">3</span> Reported</li>
-                                </ul>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                Blog</a>
-                              </h4>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <ul class="list-group">
-                                    <li class="list-group-item"><span class="badge">12</span> New</li>
-                                    <li class="list-group-item"><span class="badge">5</span> Deleted</li>
-                                </ul>
-                            </div>
-                          </div>
-                            <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                Settings</a>
-                              </h4>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                                <ul class="list-group">
-                                    <li class="list-group-item"><span class="badge">1</span> Users Reported</li>
-                                    <li class="list-group-item"><span class="badge">5</span> User Waiting Activation</li>
-                                </ul>
-                            </div>
-                          </div>
-                        </div> 
-                    </div>
-                    <div class="col col-md-9">     
-                        <div class="row">
-                            <div class="col col-md-5">
-                                <h4>Today Stats:</h4>
-                                        Visits<span class="pull-right strong">- 15%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15"aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
-                                        </div>
-                                    
-                                        20 New Users<span class="pull-right strong">+ 30%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30"aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
-                                        </div>
-                                    
-                                        359 Downloads<span class="pull-right strong">+ 8%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="8"aria-valuemin="0" aria-valuemax="100" style="width:8%">8%</div>
-                                        </div>
-                            </div>
-                            <div class="col col-md-5">
-                                <h4>This Month Stats:</h4>
-                                        Visits<span class="pull-right strong">+ 45%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45"aria-valuemin="0" aria-valuemax="100" style="width:45%">45%</div>
-                                        </div>
-                                    
-                                        395 New Users<span class="pull-right strong">+ 57%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="57"aria-valuemin="0" aria-valuemax="100" style="width:57%">57%</div>
-                                        </div>
-                                    
-                                        12.593 Downloads<span class="pull-right strong">+ 25%</span>
-                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25"aria-valuemin="0" aria-valuemax="100" style="width:25%">25%</div>
-                                        </div>
-                            </div>
-                        </div>
-                    </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="fa fa-envelope"></i></span>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span><i class="fa fa-bar-chart"></i></span>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="fa fa-credit-card-alt"></i></span>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="title">
+                Analytics
+            </div>
+            <div class="main">
+                <div class="widget">
+                    <div class="title">Number of views</div>
+                    <div class="chart"></div>
                 </div>
+                <div class="widget">
+                    <div class="title">Number of likes</div>
+                    <div class="chart"></div>
+                </div>
+                <div class="widget">
+                    <div class="title">Number of comments</div>
+                    <div class="chart"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
