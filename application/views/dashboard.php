@@ -13,7 +13,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#">
-                            Hello <?= $this->session->userdata('userSessionName'); ?>
+                            Hello <?= $this->session->userdata('userSession'); ?>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">            
