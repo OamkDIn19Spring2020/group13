@@ -28,7 +28,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Responsive vertical menu navigation</title>
+        <title>Hotel Management System</title>
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -76,62 +76,6 @@
 
     </head>
     <body>
-        <div class="header">
-            <div class="logo">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Group 13</span>
-            </div>
-            <a href="#" class="nav-trigger"><span></span></a>
-        </div>
-        <div class="side-nav">
-            <div class="logo">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Group 13</span>
-            </div>
-            <nav>
-                <ul>
-                    <div class="sidebar-user">
-                        <img src="../img/user.png" alt="Linda Miller" class="tab-username sidebar-user">
-
-                        <div class="font-weight-bold">Vic
-                        </div>
-
-                        <small>Front-end Developer</small>
-                    </div>  
-
-                    <li>
-                        <a href="#">
-                            <span><i class="fa fa-user"></i></span>
-                            <span>Users</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-
-                            <span><i class="fa fa-envelope"></i></span>
-                            <span>Messages</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="#">
-                            <span><i class="fa fa-bar-chart"></i></span>
-                            <span>Analytics</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i class="fas fa-money-check"></i></span>
-                            <span>Payments</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="logout">
-                            <span><i class="fas fa-sign-out-alt"></i></span>
-                            <span>Log-out</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
         <div class="main-content">
             <div class="title">
@@ -165,7 +109,7 @@
                         Income
                     </div>
                     <div class="chart">
-                        <div id="curve_chart" style="width: 120%; height: 300px"></div>
+                        <div id="curve_chart" style="width: 120%; height: 250px"></div>
                     </div>
                 </div>
             </div>

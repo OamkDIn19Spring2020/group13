@@ -98,7 +98,10 @@ class Login extends CI_Controller {
 	{
 		//admin
 		if($this->session->userdata('type') == '0'){ 
+			$this->load->view('/components-adm/header_adm');
+			$this->load->view('/components-adm/navbar');
 			$this->load->view('dashboard');
+
 		} else {
 			// tried to catch exception if sb enter the diff link 
 			redirect('/index','refresh');
