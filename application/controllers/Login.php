@@ -77,8 +77,11 @@ class Login extends CI_Controller {
 
 	public function dashboard()
 	{
-		if($this->session->userdata('userSession')) {
-			$this->load->view('dashboard');
+
+		//admin
+		if($this->session->userdata('type') == '0'){ 
+			$this->load->view('/components-adm/header_adm');
+			$this->load->view('/components-adm/navbar')
 		} else {
 			redirect('/index','refresh');
 		}
