@@ -18,7 +18,7 @@ class Login_model extends CI_Model {
 		if ($pwd != $rePwd) {
 			echo "<span style='color: red;'> Password is not the same !! </span>";
 		}
-		else if ($countUser == '0') // the database return back the username isn't exist -> insert
+		else if ($countUser == '0')
 		{
 			$message = "<span style='color: red;'> Register success !! </span>";
 			$object = array('username' => $username
@@ -45,7 +45,6 @@ class Login_model extends CI_Model {
 
 	public function getUser($Username, $pwd)
 	{
-		//login 
 		$this->db->where('username', $Username);
 		$this->db->where('password', $pwd);
 		$count = $this->db->get('register_tr2k')->num_rows();
