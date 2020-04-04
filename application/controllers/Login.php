@@ -50,10 +50,6 @@ class Login extends CI_Controller {
 			//send data to model
 			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
 		}
-		else
-		{	
-				echo "<span style='color: red;'> Wrong input !! </span>";
-		}
 	}
 
 	public function dangNhap() 
