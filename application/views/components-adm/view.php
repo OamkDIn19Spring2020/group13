@@ -10,11 +10,24 @@
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="../css/style2.css">
         <link rel="stylesheet" href="../css/all.css">
+        <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/data.js"></script>
-        <script src="../js/main.js"></script>
+        <!-- jquery JavaScript-->
+        <script src="../chart/jquery/jquery.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="../chart/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="../chart/chartJs/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="../js/demo/chart-area-demo.js"></script>
+        <script src="../js/demo/chart-pie-demo.js"></script>
+
         <style>
             body {
                   color: blue;
