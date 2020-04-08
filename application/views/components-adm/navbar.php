@@ -1,7 +1,7 @@
 <nav>
                 <ul>
                     <div class="sidebar-user">
-                        <img src="../img/user.png" alt="Linda Miller" class="tab-username sidebar-user">
+                        <img src="../img/user.png" class="tab-username sidebar-user">
 
                         <div class="font-weight-bold"><?= $this->session->userdata('userSession'); ?>
                         </div>
@@ -10,9 +10,10 @@
                     </div>  
 
                     <li>
-                        <a href="#">
+                        <!-- Task of Marianthi -->
+                        <a href="/group13/Panel/customer">
                             <span><i class="fa fa-user"></i></span>
-                            <span>Users</span>
+                            <span>Customer</span>
                         </a>
                     </li>
                     <li>
@@ -35,10 +36,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="logout">
+                        <a href="#">
+                            <span><i class="fa fa-user"></i></span>
+                            <span>Staff</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/group13/Login/logout">
                             <span><i class="fas fa-sign-out-alt"></i></span>
                             <span>Log-out</span>
                         </a>
                     </li>
+
                 </ul>
             </nav>
