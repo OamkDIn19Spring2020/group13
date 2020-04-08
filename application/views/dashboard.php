@@ -15,39 +15,15 @@
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/data.js"></script>
         <script src="../js/main.js"></script>
-    
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Month', 'Sales'],
-          ['Jan',  1000],
-          ['Feb',  1170],
-          ['Mar',  660],
-          ['Apr',  470]
-          // ['May',  1030],
-          // ['Jun',  1030],
-          // ['July',  1030],
-          // ['Aug',  1030],
-          // ['Sep',  1030],
-          // ['Oct',  1030],
-          // ['Nov',  1030],
-          // ['Dec',  1030]
-        ]);
-
-        var options = {
-          title: 'Hotel Income Chart',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
+        <style>
+            body {
+                  color: blue;
+                }
+                a {
+                  color: inherit; /* blue colors for links too */
+                  text-decoration: inherit; /* no underline */
+                }
+        </style>
     </script>
 
     </head>

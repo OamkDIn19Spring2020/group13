@@ -16,9 +16,9 @@ class Login extends CI_Controller {
 			$this->load->view('staff_view');
 		}
 		else if($this->session->userdata('type') == '0') {
+			$this->load->view('dashboard');
 			$this->load->view('/components-adm/header_adm');
 			$this->load->view('/components-adm/navbar');
-			$this->load->view('dashboard');
 		}  
 		else {
 			$this->load->view('login_view');
@@ -52,7 +52,7 @@ class Login extends CI_Controller {
 		}
 	}
 
-	public function dangNhap() 
+	public function login() 
 	{
 		$this->load->view('login_view');
 
@@ -92,6 +92,16 @@ class Login extends CI_Controller {
 		}
 	}
 
+	public function staff(){
+		if($this->session->userdata('type') == '1') {
+			$this->load->view('staff_view');
+		} else
+		{
+			// tried to catch exception if sb enter the diff link 
+			redirect('/index','refresh');
+		}
+	}
+
 	public function dashboard()
 	{
 		//admin
@@ -106,6 +116,7 @@ class Login extends CI_Controller {
 		}
 	}
 
+
 	public function logout(){
 		if($this->session->userdata('userSession')) {
 			$this->session->unset_userdata('userSession');
@@ -114,15 +125,6 @@ class Login extends CI_Controller {
 		}
 	}
 
-	public function staff(){
-		if($this->session->userdata('type') == '1') {
-			$this->load->view('staff_view');
-		} else
-		{
-			// tried to catch exception if sb enter the diff link 
-			redirect('/index','refresh');
-		}
-	}
 }
 
 /* End of file login.php */

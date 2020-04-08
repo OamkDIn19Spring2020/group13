@@ -32,7 +32,7 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 			<div class="wthree-pro">
 				<h2>Login</h2>
 			</div>
-			<form action="dangNhap" method="post">
+			<form action="login" method="post">
 				<div class="pom-agile">
 					<input placeholder="E-mail" 
 							name="Username" 
