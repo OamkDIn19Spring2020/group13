@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="../css/style2.css">
         <link rel="stylesheet" href="../css/all.css">
+        <link rel="stylesheet" href="../css/main.css">
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -24,40 +25,8 @@
                   text-decoration: inherit; /* no underline */
                 }
         </style>
-    </script>
-
-    <!-- google chart -->
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Month', 'Sales'],
-          ['Jan',  1000],
-          ['Feb',  1170],
-          ['Mar',  660],
-          ['Apr',  470]
-          // ['May',  1030],
-          // ['Jun',  1030],
-          // ['July',  1030],
-          // ['Aug',  1030],
-          // ['Sep',  1030],
-          // ['Oct',  1030],
-          // ['Nov',  1030],
-          // ['Dec',  1030]
-        ]);
-        var options = {
-          title: 'Hotel Income Chart',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-        chart.draw(data, options);
-      }
-    </script> -->
-
     </head>
+
     <body>
         
     </body>

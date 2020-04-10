@@ -17,7 +17,20 @@ body {
 	background-color: #fff;
 	border-bottom: 3px solid #2d3d51;
 }
+/*href for font-awesome ico*/
+a.icon-block {
+        display:inline-block;
+        width:10em;
+        float:left;
+        text-align:center;
+    }
 
+    a.icon-block i,
+    a.icon-block span {
+        display:block;
+        width:100%;
+        clear:both;
+    }
 
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {
@@ -42,14 +55,6 @@ body {
 	font-weight: 700;
 	color: #233245;
 }
-
-.sidebar-user {
-  padding: 1.5rem 1rem 1rem;
-  background: #35475e;
-  color: #fff;
-  text-align: center; 
-}
-
 .logo  i {
 	font-size: 22px;
 }
@@ -232,9 +237,5 @@ body {
 	color: #617085;
 	font-weight: 600;
 }
-.ad {
-	width: 350px;
-	height: 300px;
-	border: 1px solid #ddd;
-}
+
 
