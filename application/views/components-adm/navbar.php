@@ -14,7 +14,7 @@
                         <div class="font-weight-bold"><?= $this->session->userdata('userSession'); ?>
                         </div>
 
-                        <small>Front-end Developer</small>
+                        <small><?php echo ($this->session->userdata('type') == '0')? 'Admin': 'Staff'?> </small>
                     </div>  
 
                     <li class="<?php echo ( $third_part == '' || $third_part == 'customer' )? 'active': ''?>">
