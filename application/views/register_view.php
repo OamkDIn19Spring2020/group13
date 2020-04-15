@@ -13,6 +13,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 <link rel="stylesheet" href="../css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
 <link rel="stylesheet" href="../css/all.css"> <!-- Font-Awesome-Icons-CSS -->
+
 <!-- //css files -->
 <!-- online-fonts -->
 <link href="//fonts.googlea
@@ -39,7 +40,11 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
   					<input type="radio" name="type" value=0 class="rdBtn"> Adminstator<br>
 				</div>&nbsp;
 				<div class="pom-agile">
-					<input placeholder="E-mail" name="username" class="user" type="email" required="">
+					<input placeholder="Full Name" name="fullname" class="user" type="text">
+					<span class="icon1"><i class="fas fa-id-card"></i></span>
+				</div>&nbsp;
+				<div class="pom-agile">
+					<input placeholder="Username" name="username" class="user" type="text" required="">
 					<span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
 				</div>
 				<div class="pom-agile">
@@ -73,9 +78,18 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 				<div class="pom-agile">
 					<input placeholder="Salary" name="salary" class="pass" type="text" required="">
 					<span class="icon2"><i class="fas fa-dollar-sign"></i></span>
-				</div>&nbsp;
+				</div>
 				<div class="pom-agile">
-					<input type="text" name="hDay" required pattern="\d{4}-\d{2}-\d{2}" placeholder="Start Day" title="Enter a date in this format YYYY-MM-DD">
+					<input placeholder="Address" name="address" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-map-marker-alt"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input placeholder="Postal code" name="postalCode" class="pass" type="text" required="">
+					<span class="icon2"><i class="fas fa-mail-bulk"></i></span>
+				</div>
+				&nbsp;
+				<div class="pom-agile">
+					<input type="text" name="hDay" required pattern="\d{2}-\d{2}-\d{4}" placeholder="Start Day" title="Enter a date in this format YYYY-MM-DD">
 					<span class="icon1"><i class="far fa-calendar-alt"></i></span>
 				</div>
 				<div class="sub-w3l">

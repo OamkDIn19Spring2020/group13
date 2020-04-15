@@ -17,8 +17,8 @@ class Login extends CI_Controller {
 		}
 		else if($this->session->userdata('type') == '0') {
 			$this->load->view('dashboard');
-			$this->load->view('/components-adm/header_adm');
-			$this->load->view('/components-adm/navbar');
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-adm/navbar');
 		}  
 		else {
 			$this->load->view('login_view');
@@ -29,6 +29,7 @@ class Login extends CI_Controller {
 	{
 		$this->load->view('register_view');
 		// get variable from the input
+		$name = $this->input->post('fullname');
 		$username = $this->input->post('username');
 		$pwd = $this->input->post('Password');
 		$rePwd = $this->input->post('RePassword');
@@ -39,16 +40,18 @@ class Login extends CI_Controller {
 		$email = $this->input->post('email');
 		$department = $this->input->post('department');
 		$salary = $this->input->post('salary');
+		$address = $this->input->post('address');
+		$pCode = $this->input->post('postalCode');
 		$hiring_date = $this->input->post('hDay');
 
 		//check the input data is not null (i already validate from form, btw i tried to invade the hackers and attackers to edit HTML via SYNTAX SQL) 
-		if ($username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary && $hiring_date )
+		if ($name && $username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary && $hiring_date && $pCode && $address && $hiring_date)
 		{
 			//load model
 			$this->load->model('login_model');
 
 			//send data to model
-			$this->login_model->addMember($username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date);
+			$this->login_model->addMember($name, $username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date, $pCode, $address);
 		}
 	}
 
@@ -94,10 +97,10 @@ class Login extends CI_Controller {
 
 	public function staff(){
 		if($this->session->userdata('type') == '1') {
-			$this->load->view('/components-adm/header_adm');
-			$this->load->view('/components-adm/navbar');
-			$this->load->view('/components-adm/view');
-			$this->load->view('staff_view');
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-staff/navbar');
+			$this->load->view('/components/view');
+			// $this->load->view('staff_view');
 		} else
 		{
 			// tried to catch exception if sb enter the diff link 
@@ -110,13 +113,13 @@ class Login extends CI_Controller {
 		//admin
 		if($this->session->userdata('type') == '0'){ 
 			//load components
-			$this->load->view('/components-adm/header_adm');
-			$this->load->view('/components-adm/navbar');
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-adm/navbar');
 			// main content
-			$this->load->view('/components-adm/view');
+			$this->load->view('/components/view');
 			//sumary
-			$this->load->view('/components-adm/summary');
-			$this->load->view('/components-adm/earning');
+			$this->load->view('/components/components-adm/summary');
+			$this->load->view('/components/components-adm/earning');
 		} else {
 			// tried to catch exception if sb enter the diff link 
 			redirect('/index','refresh');
