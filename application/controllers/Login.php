@@ -94,6 +94,9 @@ class Login extends CI_Controller {
 
 	public function staff(){
 		if($this->session->userdata('type') == '1') {
+			$this->load->view('/components-adm/header_adm');
+			$this->load->view('/components-adm/navbar');
+			$this->load->view('/components-adm/view');
 			$this->load->view('staff_view');
 		} else
 		{
@@ -109,7 +112,9 @@ class Login extends CI_Controller {
 			//load components
 			$this->load->view('/components-adm/header_adm');
 			$this->load->view('/components-adm/navbar');
+			// main content
 			$this->load->view('/components-adm/view');
+			//sumary
 			$this->load->view('/components-adm/summary');
 			$this->load->view('/components-adm/earning');
 		} else {

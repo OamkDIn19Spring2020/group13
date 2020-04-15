@@ -12,8 +12,8 @@ class Panel extends CI_Controller {
 
 		$this->load->view('/components-adm/header_adm');
 		$this->load->view('/components-adm/navbar');
-		$this->load->view('/components-adm/customer_view');
 		$this->load->view('/components-adm/view');
+		$this->load->view('/components-adm/customer_view');
 	}
 }
 

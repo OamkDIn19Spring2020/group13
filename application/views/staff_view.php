@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-	<h1>Staff</h1>
-	<a href="logout">Logout</a>
-</body>
-</html>
+<!-- Content Row -->
+<div class="main-content">
+            <div class="title">
+                Analytics
+            </div>
+
+            <h1>Staff page</h1>
+            
+			<a href="logout">Logout</a>
+            
+            

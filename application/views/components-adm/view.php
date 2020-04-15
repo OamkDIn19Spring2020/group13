@@ -10,23 +10,19 @@
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="../css/style2.css">
         <link rel="stylesheet" href="../css/all.css">
-        <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-
-        <!-- jquery JavaScript-->
-        <script src="../chart/jquery/jquery.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="../chart/jquery-easing/jquery.easing.min.js"></script>
+        <!-- <link rel="stylesheet" href="../css/main.css"> -->
+        <link rel="stylesheet" href="../css/sb-admin-2.min.css">
+            
+        <!-- graphJS  -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
         <!-- Custom scripts for all pages-->
         <script src="../js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="../chart/chartJs/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="../js/demo/chart-area-demo.js"></script>
-        <script src="../js/demo/chart-pie-demo.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="../js/main.js"></script>
 
         <style>
             body {
