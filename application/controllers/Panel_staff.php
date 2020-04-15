@@ -8,6 +8,10 @@ class Panel_staff extends CI_Controller {
 		$this->load->library('session');
 	}
 
+	public function index(){
+		redirect('../Panel_staff/toDoList','refresh');
+	}
+
 	public function check(){
 
 		$this->load->view('/components/header_adm');
