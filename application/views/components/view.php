@@ -1,3 +1,11 @@
+<!-- // php code to get URL component -->
+<?php  
+    $directoryURI = $_SERVER['REQUEST_URI'];
+    $path = parse_url($directoryURI, PHP_URL_PATH);
+    $components = explode('/', $path);
+    $third_part = $components[3];
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,6 +45,10 @@
 
     </head>
     <body>
-        
+        <!-- Content Row -->
+        <div class="main-content">
+                    <div class="title">
+                        <?php echo $third_part;?>
+                    </div>
     </body>
 </html>
