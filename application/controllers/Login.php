@@ -13,12 +13,10 @@ class Login extends CI_Controller {
 		// check the _session[type] to load the view
 		if ($this->session->userdata('type') == '1')
 		{
-			$this->load->view('staff_view');
+			redirect('../Panel_staff','refresh');
 		}
 		else if($this->session->userdata('type') == '0') {
-			$this->load->view('dashboard');
-			$this->load->view('/components/header_adm');
-			$this->load->view('/components/components-adm/navbar');
+			redirect('../Panel_admin','refresh');
 		}  
 		else {
 			$this->load->view('login_view');

@@ -8,6 +8,10 @@ class Panel_admin extends CI_Controller {
 		$this->load->library('session');
 	}
 
+	public function index(){
+		redirect('./dashboard','refresh');
+	}
+
 	public function customer(){
 
 		$this->load->view('/components/header_adm');

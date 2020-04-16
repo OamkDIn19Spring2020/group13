@@ -26,7 +26,7 @@
 
                     <li class="<?php echo ( $third_part == '' || $third_part == 'schedule' )? 'active': ''?>">
                         <!-- Task of Marianthi -->
-                        <a href="/group13/Panel/schedule">
+                        <a href="/group13/Panel_staff/schedule">
                             <span><i class="far fa-calendar-alt"></i></span>
                             <span>Schedule</span>
                         </a>
@@ -34,7 +34,7 @@
 
                     <li class="<?php echo ( $third_part == '' || $third_part == 'toDoList' )? 'active': ''?>">
                         <!-- Task of Marianthi -->
-                        <a href="/group13/Panel/toDoList">
+                        <a href="/group13/Panel_staff/toDoList">
                             <span><i class="fas fa-clipboard-list"></i></span>
                             <span>To do list</span>
                         </a>
@@ -42,14 +42,14 @@
 
                     <li class="<?php echo ( $third_part == '' || $third_part == 'history' )? 'active': ''?>">
                         <!-- Task of Marianthi -->
-                        <a href="/group13/Panel/history">
+                        <a href="/group13/Panel_staff/history">
                             <span><i class="fas fa-history"></i></span>
                             <span>History</span>
                         </a>
                     </li>
 
                     <li class="<?php echo ( $third_part == '' || $third_part == 'payment' )? 'active': ''?>">
-                         <a href="/group13/Panel/payment">
+                         <a href="/group13/Panel_staff/payment">
                             <span><i class="fas fa-money-check"></i></span>
                             <span>Payments</span>
                         </a>
