@@ -6,6 +6,7 @@ class Login extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->model('login_model');
 	}
 
 	public function index()
@@ -45,9 +46,6 @@ class Login extends CI_Controller {
 		//check the input data is not null (i already validate from form, btw i tried to invade the hackers and attackers to edit HTML via SYNTAX SQL) 
 		if ($name && $username && $pwd && $rePwd && $type && $fn && $ln && $phone && $email && $department && $salary && $hiring_date && $pCode && $address && $hiring_date)
 		{
-			//load model
-			$this->load->model('login_model');
-
 			//send data to model
 			$this->login_model->addMember($name, $username, $pwd, $rePwd, $type , $fn , $ln , $phone , $email , $department , $salary , $hiring_date, $pCode, $address);
 		}
@@ -62,7 +60,6 @@ class Login extends CI_Controller {
 		$pwd = $this->input->post('Password');
 
 		//send data to model
-		$this->load->model('login_model');
 		$count = $this->login_model->getUser($Username, $pwd);
 		$type = $this->login_model->getType($Username);
 

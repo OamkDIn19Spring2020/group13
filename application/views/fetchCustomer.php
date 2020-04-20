@@ -23,12 +23,13 @@ if(mysqli_num_rows($result) > 0)
 {
 	$output .= '<div class="table-responsive">
 					<table class="table table bordered">
-						<tr>
+						<tr class="table-primary">
 							<th>Customer Name</th>
 							<th>Address</th>
 							<th>City</th>
 							<th>Postal Code</th>
 							<th>Country</th>
+							<th>Action</th>
 						</tr>';
 	while($row = mysqli_fetch_array($result))
 	{
@@ -39,6 +40,11 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["City"].'</td>
 				<td>'.$row["PostalCode"].'</td>
 				<td>'.$row["Country"].'</td>
+				<td>
+						<button type="button" class="btn btn-warning">
+                                            <span class="fas fa-edit"></span>
+                                        </button>
+				</td>
 			</tr>
 		';
 	}
