@@ -28,8 +28,8 @@ $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result) > 0)
 {
 	$output .= '<div class="table-responsive">
-					<table class="table table bordered">
-						<tr>
+					<table class="table table-bordered">
+						<tr class="table-success">
 							<th>Name</th>
 							<th>Username</th>
 							<th>Position</th>
@@ -39,6 +39,7 @@ if(mysqli_num_rows($result) > 0)
 							<th>Department</th>
 							<th>Salary</th>
 							<th>Hiring Date</th>
+							<th>Action</th>
 						</tr>';
 	while($row = mysqli_fetch_array($result))
 	{	
@@ -62,6 +63,11 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["department"].'</td>
 				<td>'.$row["salary"].' €'.'</td>
 				<td>'.$row["hiring_date"].'</td>
+				<td>
+						<button type="button" class="btn btn-warning">
+                                            <span class="fas fa-edit"></span>
+                                        </button>
+				</td>
 			</tr>
 		';
 	}

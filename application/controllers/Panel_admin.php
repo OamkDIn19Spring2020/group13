@@ -6,6 +6,8 @@ class Panel_admin extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->model('login_model');
+		$this->load->model('adminFunction');
 	}
 
 	public function index(){
@@ -36,17 +38,19 @@ class Panel_admin extends CI_Controller {
 		
 	}
 
-	public function payment() {
+	public function request() {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
-		
+		$this->load->view('/components/components-adm/request_view');
 	}
 
 	public function room() {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
-		$this->load->view('/components/view');	
+		$this->load->view('/components/view');
+		$result['data']=$this->adminFunction->getRoom();
+		$this->load->view('/components/components-adm/room_view',$result);
 	}
 
 	// fetch data search user and customer
@@ -57,6 +61,14 @@ class Panel_admin extends CI_Controller {
 
 	public function searchStaff() {
 		$this->load->view('fetchStaff');
+	}
+
+	public function searchReserv() {
+		$this->load->view('fetchReservation');
+	}
+
+	public function requestStaff() {
+		$this->load->view('fetchRequest');
 	}
 }
 

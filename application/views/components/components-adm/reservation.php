@@ -1,28 +1,65 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
-</head>
-<body>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
- 
- 
-</body>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <br />
+      <br />
+      <h2 align="center">Reservation</h2><br />
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-search"></i> Search</span>
+          <input type="text" name="search_text" id="search_text" placeholder="Search by Staff Details" class="form-control" />
+        </div>
+      </div>
+      <br />
+      <div id="result"></div>
+    </div>
+    <div style="clear:both"></div>
+    <br />
+    
+    <br />
+    <br />
+    <br />
+  </body>
 </html>
+
+
+<script>
+$(document).ready(function(){
+  load_data();
+  function load_data(query)
+  {
+    $.ajax({
+      url:"searchReserv",
+      method:"post",
+      data:{query:query},
+      success:function(data)
+      {
+        $('#result').html(data);
+      }
+    });
+  }
+  
+  $('#search_text').keyup(function(){
+    var search = $(this).val();
+    if(search != '')
+    {
+      load_data(search);
+    }
+    else
+    {
+      load_data();      
+    }
+  });
+});
+</script>
+
+
+
+

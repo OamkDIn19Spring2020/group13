@@ -48,10 +48,10 @@
                         </a>
                     </li>
 
-                    <li class="<?php echo ( $third_part == '' || $third_part == 'payment' )? 'active': ''?>">
-                         <a href="/group13/Panel_admin/payment">
+                    <li class="<?php echo ( $third_part == '' || $third_part == 'request' )? 'active': ''?>">
+                         <a href="/group13/Panel_admin/request">
                             <span><i class="fas fa-money-check"></i></span>
-                            <span>Payments</span>
+                            <span>Request</span>
                         </a>
                     </li>
 
