@@ -24,14 +24,6 @@
                         </a>
                     </li>
 
-                    <li class="<?php echo ( $third_part == '' || $third_part == 'schedule' )? 'active': ''?>">
-                        <!-- Task of Marianthi -->
-                        <a href="/group13/Panel_staff/schedule">
-                            <span><i class="far fa-calendar-alt"></i></span>
-                            <span>Schedule</span>
-                        </a>
-                    </li>
-
                     <li class="<?php echo ( $third_part == '' || $third_part == 'toDoList' )? 'active': ''?>">
                         <!-- Task of Marianthi -->
                         <a href="/group13/Panel_staff/toDoList">
