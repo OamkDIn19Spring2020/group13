@@ -1,3 +1,5 @@
+<script src='/group13/js/test.js'></script>
+
     <div class="container">
         <div class="text-center">
             <br/>
@@ -11,10 +13,10 @@
                         <div class="panel-title">New Task</div>
                     </div>
                     <div class="panel-body">
-                        <form>
+                        
                             <div class="form-group">
                                 <label>Name :</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" id="input" class="form-control js-todo-input" />
                             </div>
                             <label>Status :</label>
                             <select class="form-control" required="required">
@@ -23,10 +25,10 @@
                             </select>
                             <br/>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-warning">Add</button>&nbsp;
+                                <button type="submit" class="btn btn-warning add">Add</button>&nbsp;
                                 <button type="submit" class="btn btn-danger">Close</button>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -72,7 +74,7 @@
                                     </td>
                                     <td></td>
                                 </tr>
-                                <tr>
+                                <tr class="item_input">
                                     <td>1</td>
                                     <td>Check in</td>
                                     <td class="text-center">

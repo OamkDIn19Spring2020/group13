@@ -20,14 +20,6 @@ class Panel_staff extends CI_Controller {
 		$this->load->view('/components/components-staff/check');
 	}
 
-	public function schedule(){
-
-		$this->load->view('/components/header_adm');
-		$this->load->view('/components/components-staff/navbar');
-		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/schedule');
-	}
-
 	public function toDoList() {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-staff/navbar');
@@ -50,6 +42,10 @@ class Panel_staff extends CI_Controller {
 		$this->load->view('/components/components-staff/payment');
 		
 	}
+
+	// public function checkInOut(){
+		
+	// }
 }
 
 /* End of file login.php */
