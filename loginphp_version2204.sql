@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 15, 2020 lúc 11:23 PM
+-- Thời gian đã tạo: Th4 22, 2020 lúc 12:20 AM
 -- Phiên bản máy phục vụ: 10.1.22-MariaDB
 -- Phiên bản PHP: 7.1.4
 
@@ -25,18 +25,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `customer`
+-- Cấu trúc bảng cho bảng `checkin`
 --
 
-CREATE TABLE `customer` (
-  `Customer_id` int(11) NOT NULL,
-  `Customer_firstName` varchar(50) NOT NULL,
-  `Customer_lastName` varchar(50) NOT NULL,
-  `Customer_TCno` varchar(50) NOT NULL,
-  `Customer_country` varchar(50) NOT NULL,
-  `Customer_telephone` varchar(50) NOT NULL,
-  `Customer_email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `checkin` (
+  `id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL,
+  `check_in` date NOT NULL,
+  `check_out` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `payment`
+--
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL,
+  `stuff_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `staff_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `payment`
+--
+
+INSERT INTO `payment` (`id`, `stuff_name`, `staff_id`, `date`, `status`) VALUES
+(1, 'table', 1, '2020-04-20', 0),
+(2, 'chair', 1, '2020-04-20', 0);
 
 -- --------------------------------------------------------
 
@@ -85,8 +104,16 @@ CREATE TABLE `reservation` (
   `employee_id` int(11) NOT NULL,
   `reservation_date` varchar(50) NOT NULL,
   `reservation_price` float NOT NULL,
-  `Status` int(11) NOT NULL
+  `Status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `reservation`
+--
+
+INSERT INTO `reservation` (`customer_id`, `room_id`, `checkin_date`, `employee_id`, `reservation_date`, `reservation_price`, `Status`) VALUES
+(1, 1, '4-25-2020', 1, '4-20-2020', 300, 0),
+(3, 0, '4-26-2020', 2, '4-20-2020', 29, 1);
 
 -- --------------------------------------------------------
 
@@ -96,8 +123,19 @@ CREATE TABLE `reservation` (
 
 CREATE TABLE `room` (
   `room_id` int(11) NOT NULL,
-  `room_type` varchar(50) NOT NULL
+  `room_type` varchar(50) NOT NULL,
+  `desc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `room`
+--
+
+INSERT INTO `room` (`room_id`, `room_type`, `desc`) VALUES
+(1, 'Luxury', 'Luxury rooms with a view of the City are elegantly appointed with king beds, working desks with Bluetooth connectivity for guests to enjoy personal entertainment and spacious marble bathrooms featuring freestanding oval soaking tubs.'),
+(2, 'pro', 'Audio Engineer Mac Pro Workstation, produce, edit, and mix audio. In a typical week I can be doing anything from editing and mixing feature films and documentaries to mixing music albums or producing podcasts.'),
+(3, 'normal', 'simple and uncomplicated, with canisters neatly lining practical and minimal open shelves.'),
+(4, 'vietnam tradition', 'Fitted with tiled flooring, air-conditioned rooms are furnished with a wardrobe, a flat-screen cable TV, minibar and seating area. The private bathroom comes with a hairdryer, shower facility and free toiletries.');
 
 -- --------------------------------------------------------
 
@@ -137,10 +175,16 @@ INSERT INTO `tbl_customer` (`CustomerID`, `CustomerName`, `Address`, `City`, `Po
 --
 
 --
--- Chỉ mục cho bảng `customer`
+-- Chỉ mục cho bảng `checkin`
 --
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`Customer_id`);
+ALTER TABLE `checkin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `register_tr2k`
@@ -172,26 +216,30 @@ ALTER TABLE `tbl_customer`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `checkin`
+--
+ALTER TABLE `checkin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT cho bảng `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT cho bảng `register_tr2k`
 --
 ALTER TABLE `register_tr2k`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT cho bảng `room`
+--
+ALTER TABLE `room`
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
---
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `reservation`
---
-ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`Customer_id`) ON UPDATE CASCADE;
-COMMIT;
+  MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
