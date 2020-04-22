@@ -35,11 +35,25 @@ class Panel_staff extends CI_Controller {
 		$this->load->view('/components/components-staff/history');
 	}
 
-	public function payment() {
+	public function request() {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-staff/navbar');
 		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/payment');
+		$this->load->view('/components/components-staff/request');
+		
+	}
+
+	public function mRequest() {
+		$this->load->view('components/components-staff/request');
+
+		$stuffs = $this->input->post('stuffs');
+		$id = $this->session->userdata('id');
+		$desc = $this->input->post('desc');
+		$day = $this->input->post('dayRequest');
+
+		$this->load->model('staffModel');
+			//send data to model
+			$this->staffModel->addRequest($stuffs, $id, $desc, $day);
 		
 	}
 

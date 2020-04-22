@@ -32,7 +32,6 @@ if(mysqli_num_rows($result) > 0)
 							<th>Reservation Date</th>
 							<th>Reservation Price</th>
 							<th>Status</th>
-							<th>Action</th>
 						</tr>';
 	while($row = mysqli_fetch_array($result))
 	{
@@ -51,15 +50,6 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["reservation_date"].'</td>
 				<td>'.$row["reservation_price"].'</td>
 				<td>'.$paidStatus.'</td>
-				<td>
-						<button type="button" class="btn btn-warning">
-                                            <span class="fas fa-edit"></span>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger">
-                                            <span class="fa fa-trash"></span>
-                                        </button>
-				</td>
 			</tr>
 		';
 	}

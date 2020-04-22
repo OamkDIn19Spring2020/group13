@@ -67,6 +67,14 @@ class Login_model extends CI_Model {
 		$query=$this->db->get('room')->row_array();
 		return $query;
 	}
+
+	public function getID($Username)
+	{
+		$this->db->select('id');
+		$this->db->where('username', $Username);
+		$query=$this->db->get('register_tr2k')->row_array();
+		return $query;
+	}
 }
 
 /* End of file login_model.php */

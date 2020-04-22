@@ -89,7 +89,7 @@ pis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;su
 				</div>
 				&nbsp;
 				<div class="pom-agile">
-					<input type="text" name="hDay" required pattern="\d{2}-\d{2}-\d{4}" placeholder="Start Day" title="Enter a date in this format YYYY-MM-DD">
+					<input type="date" class="form-control" name="dayRequest">
 					<span class="icon1"><i class="far fa-calendar-alt"></i></span>
 				</div>
 				<div class="sub-w3l">

@@ -32,18 +32,10 @@
                         </a>
                     </li>
 
-                    <li class="<?php echo ( $third_part == '' || $third_part == 'history' )? 'active': ''?>">
-                        <!-- Task of Marianthi -->
-                        <a href="/group13/Panel_staff/history">
-                            <span><i class="fas fa-history"></i></span>
-                            <span>History</span>
-                        </a>
-                    </li>
-
                     <li class="<?php echo ( $third_part == '' || $third_part == 'payment' )? 'active': ''?>">
-                         <a href="/group13/Panel_staff/payment">
+                         <a href="/group13/Panel_staff/request">
                             <span><i class="fas fa-money-check"></i></span>
-                            <span>Payments</span>
+                            <span>Requests</span>
                         </a>
                     </li>
 
