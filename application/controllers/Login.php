@@ -62,14 +62,17 @@ class Login extends CI_Controller {
 		//send data to model
 		$count = $this->login_model->getUser($Username, $pwd);
 		$type = $this->login_model->getType($Username);
+		$id = $this->login_model->getID($Username);
 
 		//admin
 		if($count == '1' && $type['type'] == '0') {
 			//create session
 			//set variable
 			$type = $type['type'];
+			$testID = $id['id'];
 			$this->session->set_userdata('userSession', $Username);
 			$this->session->set_userdata('type', $type);
+			$this->session->set_userdata('id', $testID);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/dashboard','refresh');	
@@ -78,8 +81,10 @@ class Login extends CI_Controller {
 		else if($count == '1' && $type['type'] == '1') {
 			//create session
 			$type = $type['type'];
+			$testID = $id['id'];
 			$this->session->set_userdata('userSession', $Username);
 			$this->session->set_userdata('type', $type);
+			$this->session->set_userdata('id', $testID);
 			$message = 'Welcome back '.$Username;
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			redirect('/staff','refresh');	
