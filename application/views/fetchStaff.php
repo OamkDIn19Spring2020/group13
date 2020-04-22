@@ -6,7 +6,8 @@ if(isset($_POST["query"]))
 	$search = mysqli_real_escape_string($connect, $_POST["query"]);
 	$query = "
 	SELECT * FROM register_tr2k 
-	WHERE fullName LIKE '%".$search."%'
+	WHERE id LIKE '%".$search."%
+	OR fullName LIKE '%".$search."%'
 	OR username LIKE '%".$search."%' 
 	OR type LIKE '%".$search."%' 
 	OR telephone LIKE '%".$search."%' 
@@ -30,6 +31,7 @@ if(mysqli_num_rows($result) > 0)
 	$output .= '<div class="table-responsive">
 					<table class="table table-bordered">
 						<tr class="table-success">
+							<th>ID</th>
 							<th>Name</th>
 							<th>Username</th>
 							<th>Position</th>
@@ -54,6 +56,7 @@ if(mysqli_num_rows($result) > 0)
 		// print
 		$output .= '
 			<tr>
+				<td>'.$row["id"].'</td>
 				<td>'.$row["fullName"].'</td>
 				<td>'.$row["username"].'</td>
 				<td>'.$test.'</td> 
