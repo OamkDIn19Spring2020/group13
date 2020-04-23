@@ -70,6 +70,14 @@ class Panel_admin extends CI_Controller {
 	public function requestStaff() {
 		$this->load->view('fetchRequest');
 	}
+
+	public function fetchEdit() {
+		$this->load->view('fetchEdit');
+	}
+
+	public function deleteBtn() {
+		$this->load->view('delete');
+	}
 }
 
 /* End of file login.php */

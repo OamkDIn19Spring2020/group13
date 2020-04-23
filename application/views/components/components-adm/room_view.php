@@ -16,7 +16,7 @@
       						<div class="caption">
       							<h3>
                                                       <?php echo $arrBabel['0'] ?>
-                                                      <button type="button" class="btn btn-warning" style="display: inline;">
+                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
                                                             <span class="fas fa-edit"></span>
                                                     </button>
                                                 </h3>
@@ -33,7 +33,7 @@
       						<div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['1'] ?>
-                                                      <button type="button" class="btn btn-warning" style="display: inline;">
+                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
                                                             <span class="fas fa-edit"></span>
                                                     </button>
                                                 </h3>
@@ -51,7 +51,7 @@
       						<div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['2'] ?>
-                                                      <button type="button" class="btn btn-warning" style="display: inline;">
+                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
                                                             <span class="fas fa-edit"></span>
                                                     </button>
                                                 </h3>
@@ -68,7 +68,7 @@
                                           <div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['3'] ?>
-                                                      <button type="button" class="btn btn-warning" style="display: inline;">
+                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
                                                             <span class="fas fa-edit"></span>
                                                     </button>
                                                 </h3>
@@ -79,3 +79,9 @@
                         </div>
         </div>
 </div>
+
+<script>
+      $(document).on('click', 'edit_data' function() {
+            var roomID = $(this).attr("id")
+      });
+</script>

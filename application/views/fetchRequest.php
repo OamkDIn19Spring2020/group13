@@ -34,19 +34,16 @@ if(mysqli_num_rows($result) > 0)
 	{
 		
 		$output .= '
-			<tr>
-				<td>'.$row["id"].'</td>
+			<tr id = "btn">
+				<td id="btnID">'.$row["id"].'</td>
 				<td>'.$row["stuff_name"].'</td>
 				<td>'.$row["staff_id"].'</td>
 				<td>'.$row["date"].'</td>
 				<td>
-						<button type="button" class="btn btn-primary">
-                                            <span class="fab fa-facebook-messenger"></span>
-                        </button>
                         <button type="button" class="btn btn-success">
                                             <span class="fas fa-check"></span>
                         </button>
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" onClick="deleteAjax()">
                                             <span class="fas fa-trash-alt"></span>
                         </button>
 				</td>
@@ -60,3 +57,33 @@ else
 	echo 'Data Not Found';
 }
 ?>
+
+
+<script type="text/javascript">
+	function deleteAjax() {
+		var id = document.getElementById("btnID").value;
+		var arr =[];
+		arr.push(id);
+		console.log(id);
+		if(confirm('are you sure?')) {
+			$.ajax({
+				type: 'POST',
+				url: 'deleteBtn',
+				data: {delete_id : id},
+				success: function(data) {
+					$('#delete'+id).hide();
+				}
+			});
+		}
+	}
+</script>
+
+<script>
+	$(document).ready(function(){
+  $("button").click(function(){
+    $("#btn").remove();
+  });
+});
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
