@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 22, 2020 lúc 12:20 AM
+-- Thời gian đã tạo: Th4 23, 2020 lúc 07:12 AM
 -- Phiên bản máy phục vụ: 10.1.22-MariaDB
 -- Phiên bản PHP: 7.1.4
 
@@ -46,16 +46,25 @@ CREATE TABLE `payment` (
   `stuff_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `staff_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` tinyint(1) NOT NULL,
+  `desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `payment`
 --
 
-INSERT INTO `payment` (`id`, `stuff_name`, `staff_id`, `date`, `status`) VALUES
-(1, 'table', 1, '2020-04-20', 0),
-(2, 'chair', 1, '2020-04-20', 0);
+INSERT INTO `payment` (`id`, `stuff_name`, `staff_id`, `date`, `status`, `desc`) VALUES
+(1, 'table', 1, '2020-04-20', 0, ''),
+(5, 'Con chim2', 4, '0000-00-00', 0, 'ok'),
+(6, 'Con chim23', 4, '0000-00-00', 0, 'ok'),
+(7, 'Con chim23', 4, '0000-00-00', 0, 'ok'),
+(8, 'Con chim23hhhhhhh', 4, '0000-00-00', 0, 'okgfhgfdhgdfhdf'),
+(9, 'Con chim23hhhhhhh', 4, '0000-00-00', 0, 'okgfhgfdhgdfhdf'),
+(10, 'Con chim23hhhhhhh', 4, '0000-00-00', 0, 'okgfhgfdhgdfhdf'),
+(11, 'Con chim23hhhhhhh', 4, '0000-00-00', 0, 'okgfhgfdhgdfhdf'),
+(12, 'Con chim23hhhhhhh', 4, '0000-00-00', 0, 'okgfhgfdhgdfhdf'),
+(13, 'test', 8, '2020-12-31', 0, '123');
 
 -- --------------------------------------------------------
 
@@ -89,7 +98,8 @@ INSERT INTO `register_tr2k` (`id`, `username`, `password`, `type`, `firstname`, 
 (4, 'user@test', '123456', 1, 'test', 'staff', 233232, '2323', '2323', 2200, '2000-02-02', '', 0, '0'),
 (5, 't18042k@gmail.com', '123456', 1, 'Thang', 'Nguyen', 1654534768, 't18042k@gmail.com', 'd', 0, '0000-00-00', '', 0, '0'),
 (6, 'test@test', '123456', 1, 'test1', '22', 233232, 'toilavic', 'deewqew', 20000, '2200-02-02', '', 0, '0'),
-(7, 'newss186', '123456', 1, 'Thang', 'Nguyen', 1654534768, 't18042k@gmail.com', 'asdsa', 0, '0000-00-00', 'ADSS', 65000, 'Thang Nguyen');
+(7, 'newss186', '123456', 1, 'Thang', 'Nguyen', 1654534768, 't18042k@gmail.com', 'asdsa', 0, '0000-00-00', 'ADSS', 65000, 'Thang Nguyen'),
+(8, 'bachelor2019', '123456', 1, 'Thang', 'Nguyen', 2147483647, 't18042k@gmail.com', 'ABC', 200, '0000-00-00', '34A 1/4 Kajaanintie Oulu Finland', 90130, 'Nguyen');
 
 -- --------------------------------------------------------
 
@@ -224,12 +234,12 @@ ALTER TABLE `checkin`
 -- AUTO_INCREMENT cho bảng `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT cho bảng `register_tr2k`
 --
 ALTER TABLE `register_tr2k`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT cho bảng `room`
 --
