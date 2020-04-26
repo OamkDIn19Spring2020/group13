@@ -13,47 +13,64 @@ class Panel_staff extends CI_Controller {
 	}
 
 	public function check(){
-
-		$this->load->view('/components/header_adm');
-		$this->load->view('/components/components-staff/navbar');
-		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/check');
+		if ($this->session->userdata('type') == 1) {
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-staff/navbar');
+			$this->load->view('/components/view');
+			$this->load->view('/components/components-staff/check');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function toDoList() {
-		$this->load->view('/components/header_adm');
-		$this->load->view('/components/components-staff/navbar');
-		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/toDoList');
-		
+		if ($this->session->userdata('type') == 1) {
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-staff/navbar');
+			$this->load->view('/components/view');
+			$this->load->view('/components/components-staff/toDoList');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function history() {
-		$this->load->view('/components/header_adm');
-		$this->load->view('/components/components-staff/navbar');
-		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/history');
+		if ($this->session->userdata('type') == 1) {
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-staff/navbar');
+			$this->load->view('/components/view');
+			$this->load->view('/components/components-staff/history');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function request() {
-		$this->load->view('/components/header_adm');
-		$this->load->view('/components/components-staff/navbar');
-		$this->load->view('/components/view');
-		$this->load->view('/components/components-staff/request');
-		
+		if ($this->session->userdata('type') == 1) {
+			$this->load->view('/components/header_adm');
+			$this->load->view('/components/components-staff/navbar');
+			$this->load->view('/components/view');
+			$this->load->view('/components/components-staff/request');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function mRequest() {
-		$this->load->view('components/components-staff/request');
+		if ($this->session->userdata('type') == 1) {
+			$this->load->view('components/components-staff/request');
 
-		$stuffs = $this->input->post('stuffs');
-		$id = $this->session->userdata('id');
-		$desc = $this->input->post('desc');
-		$day = $this->input->post('dayRequest');
+			$stuffs = $this->input->post('stuffs');
+			$id = $this->session->userdata('id');
+			$desc = $this->input->post('desc');
+			$day = $this->input->post('dayRequest');
 
-		$this->load->model('staffModel');
-			//send data to model
-			$this->staffModel->addRequest($stuffs, $id, $desc, $day);
+			$this->load->model('staffModel');
+				//send data to model
+				$this->staffModel->addRequest($stuffs, $id, $desc, $day);
+		} else {
+			redirect('index','refresh');
+		}
 		
 	}
 

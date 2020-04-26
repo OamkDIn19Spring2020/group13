@@ -100,7 +100,7 @@ class Login extends CI_Controller {
 			$this->load->view('/components/header_adm');
 			$this->load->view('/components/components-staff/navbar');
 			$this->load->view('/components/view');
-			// $this->load->view('staff_view');
+			$this->load->view('/components/components-staff/check');
 		} else
 		{
 			// tried to catch exception if sb enter the diff link 
