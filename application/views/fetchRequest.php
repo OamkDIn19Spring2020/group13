@@ -61,7 +61,7 @@ else
 
 <script type="text/javascript">
 	function deleteAjax() {
-		var id = document.getElementById("btnID").value;
+		var id = document.getElementById('btnID').innerText ;
 		var arr =[];
 		arr.push(id);
 		console.log(id);

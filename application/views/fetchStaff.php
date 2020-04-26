@@ -6,7 +6,7 @@ if(isset($_POST["query"]))
 	$search = mysqli_real_escape_string($connect, $_POST["query"]);
 	$query = "
 	SELECT * FROM register_tr2k 
-	WHERE id LIKE '%".$search."%
+	WHERE id LIKE '%".$search."%'
 	OR fullName LIKE '%".$search."%'
 	OR username LIKE '%".$search."%' 
 	OR type LIKE '%".$search."%' 

@@ -3,7 +3,6 @@
  
  $con = mysqli_connect("localhost","root","","loginphp");
  if(!$con){
-
     echo "failed to connect";
  }
 

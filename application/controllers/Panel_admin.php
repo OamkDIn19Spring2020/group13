@@ -15,42 +15,59 @@ class Panel_admin extends CI_Controller {
 	}
 
 	public function customer(){
-
+		if ($this->session->userdata('type') == 0) {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
 		$this->load->view('/components/components-adm/customer_view');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function staff(){
-
+		if ($this->session->userdata('type') == 0) {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
 		$this->load->view('/components/components-adm/staff_view');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function reservation() {
+		if ($this->session->userdata('type') == 0) {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
 		$this->load->view('/components/components-adm/reservation');
-		
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function request() {
+		if ($this->session->userdata('type') == 0) {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
 		$this->load->view('/components/components-adm/request_view');
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	public function room() {
+		if ($this->session->userdata('type') == 0) {
 		$this->load->view('/components/header_adm');
 		$this->load->view('/components/components-adm/navbar');
 		$this->load->view('/components/view');
 		$result['data']=$this->adminFunction->getRoom();
 		$this->load->view('/components/components-adm/room_view',$result);
+		} else {
+			redirect('index','refresh');
+		}
 	}
 
 	// fetch data search user and customer

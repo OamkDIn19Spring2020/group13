@@ -16,9 +16,7 @@
       						<div class="caption">
       							<h3>
                                                       <?php echo $arrBabel['0'] ?>
-                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
-                                                            <span class="fas fa-edit"></span>
-                                                    </button>
+                                                      
                                                 </h3>
       							<p style="color: black; font-style: italic;"><?php echo $arrDesc['0'] ?></p>
       						</div>
@@ -33,9 +31,7 @@
       						<div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['1'] ?>
-                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
-                                                            <span class="fas fa-edit"></span>
-                                                    </button>
+                                                      
                                                 </h3>
                                                 <p style="color: black; font-style: italic;"><?php echo $arrDesc['1'] ?></p>
                                           </div>
@@ -51,9 +47,7 @@
       						<div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['2'] ?>
-                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
-                                                            <span class="fas fa-edit"></span>
-                                                    </button>
+                                                      
                                                 </h3>
                                                 <p style="color: black; font-style: italic;"><?php echo $arrDesc['2'] ?></p>
                                           </div>
@@ -68,9 +62,7 @@
                                           <div class="caption">
                                                 <h3>
                                                       <?php echo $arrBabel['3'] ?>
-                                                      <button type="button" class="btn btn-warning edit_data" style="display: inline;">
-                                                            <span class="fas fa-edit"></span>
-                                                    </button>
+                                                      
                                                 </h3>
                                                 <p style="color: black; font-style: italic;"><?php echo $arrDesc['3'] ?></p>
                                           </div>
